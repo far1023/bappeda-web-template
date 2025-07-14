@@ -1,0 +1,63 @@
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.typing-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.2em;
+  background-color: #32353a;
+  animation: blink 1.5s infinite;
+  vertical-align: text-bottom;
+  margin-left: -0.5rem;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Typing effect */
+.typing-effect {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 0.5s steps(20, end) forwards;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Erasing effect */
+.erasing-effect {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: erasing 0.5s steps(20, end) forwards;
+}
+
+@keyframes erasing {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0;
+  }
+}

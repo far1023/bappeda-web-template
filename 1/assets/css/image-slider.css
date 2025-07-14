@@ -1,0 +1,22 @@
+.team-slider-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.team-slider-track {
+  display: flex;
+  width: fit-content;
+  animation: infiniteSlide 30s linear infinite;
+}
+
+.team-slider-track:hover {
+  animation-play-state: paused;
+}
+
+.team-item {
+  flex: 0 0 auto;
+  width: 250px;
+  margin: 0 15px;
+  padding: 20px 0;
+}
