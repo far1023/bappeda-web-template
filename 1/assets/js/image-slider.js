@@ -37,15 +37,15 @@ function initTeamSlider() {
     const style = document.createElement("style");
     style.id = "dynamicSliderKeyframes";
     style.textContent = `
-                    @keyframes infiniteSlide {
-                        0% {
-                            transform: translateX(0);
-                        }
-                        100% {
-                            transform: translateX(-${slideDistance}px);
-                        }
-                    }
-                `;
+        @keyframes infiniteSlide {
+          0% {
+                    transform: translateX(0);
+          }
+          100% {
+                    transform: translateX(-${slideDistance}px);
+          }
+        }
+      `;
     document.head.appendChild(style);
   }
 
