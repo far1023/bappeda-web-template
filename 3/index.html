@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bapppeda Kota dumai - test webe</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="shortcut icon" href="images/dumai2.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/logo1.png">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* CSS for the main-top area */
+        .main-top {
+            background-color: #343a40;
+            /* Dark background for the top section */
+            padding: 0px 0;
+            color: rgb(216, 75, 32);
+            font-size: 0.9em;
+        }
+
+        .main-top .container-fluid {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .main-top .row {
+            align-items: center;
+            /* Vertically center items in the row */
+        }
+
+        /* Style for the phone box */
+        .right-phone-box {
+            text-align: left;
+            padding-left: 15px;
+        }
+
+        .right-phone-box p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .right-phone-box a {
+            color: #ffc107;
+            /* Yellow color for phone link */
+            text-decoration: none;
+        }
+
+        .our-link ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .our-link ul li a:hover {
+            color: #ffc107;
+        }
+
+        .our-link ul li i {
+            margin-right: 5px;
+        }
+
+        /* NEW STYLE FOR THE TIME DISPLAY */
+        .time-display-box {
+            text-align: right;
+            /* Align content to the right */
+            padding-right: 15px;
+            color: #ffffff !important;
+            /* Ensure white text color */
+            font-size: 1.1em !important;
+            /* Slightly larger font size */
+            font-weight: bold !important;
+            display: flex !important;
+            /* Use flexbox for column layout */
+            flex-direction: column !important;
+            /* Arrange vertically */
+            align-items: flex-end !important;
+            /* Align items within the container to the right */
+            gap: 5px !important;
+            /* Spacing between time and date */
+        }
+
+        #current-time {
+            font-size: 1.3em !important;
+            /* Larger font for time */
+            color: #ffc107 !important;
+            /* Prominent yellow color for time */
+        }
+
+        #current-date {
+            font-size: 0.8em !important;
+            /* Smaller font for date */
+            color: #adb5bd !important;
+            /* Light grey color for date */
+            margin-top: 2px !important;
+        }
+
+        /* Style adjustments for text-slid-box to ensure proper alignment */
+        .text-slid-box {
+            text-align: right;
+            font-size: 0.9em;
+            width: 100%;
+            /* Ensure it takes full width in the flex container */
+        }
+
+        .offer-box {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: inline-block;
+            /* For text alignment control */
+        }
+
+        .offer-box li {
+            display: inline;
+            margin-left: 15px;
+            color: #ffc107;
+        }
+
+        .offer-box li i {
+            margin-right: 5px;
+        }
+
+        .box-img-hover {
+            /* Menetapkan tinggi yang konsisten untuk wadah gambar (sesuaikan jika perlu) */
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .box-img-hover img {
+            /* Memastikan gambar mengisi 100% dari tinggi dan lebar wadah */
+            width: 100%;
+            height: 90%;
+            /* Menggunakan object-fit: cover untuk merapikan gambar tanpa distorsi */
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="right-phone-box">
+                        <p>Call US :- <a href="tel:+62900800700"> +62 900 800 700</a></p>
+                    </div>
+                    <div class="our-link">
+                        <ul>
+                            <li><a href="https://www.instagram.com/bappeda_kotadumai/" target="_blank"><i
+                                        class="fab fa-instagram s_color"></i> Sosial Media</a></li>
+                            <li><a href="https://www.google.com/maps/place/Bappeda+Kota+Dumai/@1.6053004,101.3906669,17z/data=!4m14!1m7!3m6!1s0x31d3a655f617cfbb:0x134b74f949af74d5!2sBappeda+Kota+Dumai!8m2!3d1.6053004!4d101.3932418!16s%2Fg%2F11b7g05hdb!3m5!1s0x31d3a655f617cfbb:0x134b74f949af74d5!8m2!3d1.6053004!4d101.3932418!16s%2Fg%2F11b7g05hdb?entry=ttu&g_ep=EgoyMDI1MDcwNy4wIKXMDSoASAFQAw%3D%3D"
+                                    target="_blank"><i class="fas fa-location-arrow"></i> Our location</a></li>
+                            <li><a href="#"><i class="fas fa-headset"></i> Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="time-display-box">
+                        <span id="current-time"></span>
+                        <span id="current-date"></span>
+                    </div>
+                    <div class="text-slid-box">
+                        <div id="offer-box" class="carouselTicker">
+                            <ul class="offer-box">
+                                <li>
+                                    <i class=""></i> Selamat Datang
+                                </li>
+
+                                <i class=""></i> Bappeda Kota Dumai
+                                </li>
+                                <li>
+                                    <i class=""></i> Bersama Membangun Dumai kota idaman
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Your time display script here
+        function updateTime() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+            var ampm = hours >= 12 ? 'PM' : 'AM';
+
+            hours = hours % 12;
+            hours = hours ? hours : 12; // the hour '0' should be '12'
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+
+            var timeString = hours + ':' + minutes + ':' + seconds + ' ' + ampm;
+            var dateString = now.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+
+            document.getElementById('current-time').textContent = timeString;
+            document.getElementById('current-date').textContent = dateString;
+        }
+
+        // Update the time immediately and then every second
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
+</body>
+
+</html>
+<!-- Start Main Top -->
+<header class="main-header">
+
+    <!-- Start Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
+        <div class="container">
+            <!-- Start Header Navigation -->
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu"
+                    aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+            <!-- End Header Navigation -->
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-menu">
+                <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+                    <li class="nav-item active"><a class="nav-link" href="index.html">Beranda</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Profil
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="">Kata Sambutan </a></li>
+                            <li><a href="">Sejarah</a></li>
+                            <li><a href="">Visi Misi</a></li>
+                            <li><a href="">Struktur Organisasi</a></li>
+                            <li><a href="">Tugas Dan Fungsi</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Informasi
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="">Berita</a></li>
+                            <li><a href="">Rencana Kerja</a></li>
+                            <li><a href="">Rencana Strategi</a></li>
+                            <li><a href="">Surat Edaran</a></li>
+                            <li><a href="">Pengumuman</a></li>
+                            <li><a href="">Agenda</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Galery
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="">Foto kegiatan </a></li>
+                            <li><a href="">Vidio kegiatan</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Tautan
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="">Aplikasi pusat</a></li>
+                            <li><a href="">Aplikasi Provinsi</a></li>
+                            <li><a href="">Aplikasi kota Dumai</a></li>
+                            <li><a href="">Aplikasi lain</a></li>
+                        </ul>
+
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+            <!-- Start Atribute Navigation -->
+
+            <div class="attr-nav">
+                <ul>
+                    <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
+                    <li class="side-menu">
+                    </li>
+                </ul>
+            </div>
+            <!-- End Atribute Navigation -->
+        </div>
+        <!-- End Navigation -->
+</header>
+<!-- End Main Top -->
+
+<!-- Start Top Search -->
+<div class="top-search">
+    <div class="container">
+        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+            <input type="text" class="form-control" placeholder="Search">
+            <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+        </div>
+    </div>
+</div>
+<!-- End Top Search -->
+
+<!-- Start Slider -->
+</style>
+</head>
+
+<body>
+    <div id="slides-shop" class="cover-slides">
+        <ul class="slides-container">
+            <li class="text-center">
+                <img src="images/bappeda1.jpg" alt="" style="">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="m-b-20"><strong>Welcome To <br> BAPPEDA KOTA DUMAI</strong></h1>
+                            <p class="m-b-40">See how your users experience your website in realtime or view <br> trends
+                                to see any changes in performance over time.</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="text-center">
+                <img src="images/bappeda2.jpg" alt="">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="m-b-20"><strong>Welcome To <br> BAPPEDA KOTA DUMAI</strong></h1>
+                            <p class="m-b-40">See how your users experience your website in realtime or view <br> trends
+                                to see any changes in performance over time.</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="text-center">
+                <img src="images/bappeda3.jpg" alt="">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="m-b-20"><strong>Welcome To <br> BAPPEDA KOTA DUMAI</strong></h1>
+                            <p class="m-b-40">See how your users experience your website in realtime or view <br> trends
+                                to see any changes in performance over time.</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="slides-navigation">
+            <a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            <a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+        </div>
+    </div>
+</body>
+
+</html>
+<!-- End Slider -->
+
+
+<!-- Start berita  -->
+<div class="products-box">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="title-all text-center">
+                    <h1>Berita Terkini</h1>
+                    <div class="service-block-inner"></div>
+                    <p>Update berita Terkini Dalam BAPPEDA Kota Dumai</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row special-list">
+            <div class="col-lg-3 col-md-6 special-grid best-seller">
+                <div class="products-single fix">
+                    <div class="box-img-hover">
+                        <div class="type-lb">
+                            <p class="new">New</p>
+                        </div>
+                        <img src="images/post1.jpg" class="img-fluid blog-post-img" alt="Image">
+                        <div class="mask-icon">
+                            <ul>
+                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i
+                                            class="fas fa-eye"></i></a></li>
+                            </ul>
+                            <a class="cart" href="about.html">Selengkapnya...</a>
+                        </div>
+                    </div>
+                    <div class="why-text">
+                        <h4>Pandangan umum fraksi terhadap ranperda RPJMD kota</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 special-grid best-seller">
+                <div class="products-single fix">
+                    <div class="box-img-hover">
+                        <div class="type-lb">
+                        </div>
+                        <img src="images/post4.jpg" class="img-fluid blog-post-img" alt="Image">
+                        <div class="mask-icon">
+                            <ul>
+                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i
+                                            class="fas fa-eye"></i></a></li>
+                            </ul>
+                            <a class="cart" href="about.html">Selengkapnya...</a>
+                        </div>
+                    </div>
+                    <div class="why-text">
+                        <h4>Lorem ipsum dolor sit amet</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 special-grid">
+                <div class="products-single fix">
+                    <div class="box-img-hover">
+                        <div class="type-lb">
+                        </div>
+                        <img src="images/post2.jpg" class="img-fluid blog-post-img" alt="Image">
+                        <div class="mask-icon">
+                            <ul>
+                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i
+                                            class="fas fa-eye"></i></a></li>
+                            </ul>
+                            <a class="cart" href="about.html">Selengkapnya...</a>
+                        </div>
+                    </div>
+                    <div class="why-text">
+                        <h4>Pandangan umum fraksi terhadap ranperda RPJMD kota</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 special-grid">
+                <div class="products-single fix">
+                    <div class="box-img-hover">
+                        <div class="type-lb">
+                        </div>
+                        <img src="images/post3.jpg" class="img-fluid blog-post-img" alt="Image">
+                        <div class="mask-icon">
+                            <ul>
+                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i
+                                            class="fas fa-eye"></i></a></li>
+                            </ul>
+                            <a class="cart" href="about.html">Selengkapnya...</a>
+                        </div>
+                    </div>
+                    <div class="why-text">
+                        <h4>Lorem ipsum dolor sit amet</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- End Berita  -->
+<!-- Start Galeri -->
+<div class="products-box">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="title-all text-center">
+                    <h1>Galeri Kegiatan</h1>
+                    <div class="service-block-inner"></div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="special-menu text-center">
+                    <div class="button-group filter-button-group">
+                        <button class="active" data-filter="*">Semuanya</button>
+                        <button data-filter=".foto">Foto</button>
+                        <button data-filter=".vidio">Vidio</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row special-list">
+            <div class="col-lg-3 col-md-6 special-grid foto">
+                <div class="products-single fix">
+                    <div class="box-img-hover">
+                        <div class="type-lb">
+                        </div>
+                        <img src="images/post1.jpg" class="img-fluid" alt="Image">
+                        <div class="mask-icon">
+                            <ul>
+                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i
+                                            class="cart"></i>1 juli 2025</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 special-grid foto">
+                <div class="products-single fix">
+                    <div class="box-img-hover">
+                        <img src="images/post3.jpg" class="img-fluid" alt="Image">
+                        <div class="mask-icon">
+                            <ul>
+                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i
+                                            class="cart"></i>11 juli 2025</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 special-grid vidio">
+                <div class="products-single fix">
+                    <div class="box-img-hover">
+                        <img src="images/post2.jpg" class="img-fluid" alt="Image">
+                        <div class="mask-icon">
+                            <ul>
+                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i
+                                            class="cart"></i>11 juli 2025</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 special-grid foto">
+                <div class="products-single fix">
+                    <div class="box-img-hover">
+                        <img src="images/post5.jpg" class="img-fluid" alt="Image">
+                        <div class="mask-icon">
+                            <ul>
+                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i
+                                            class="cart"></i>11 juli 2025</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 special-grid vidio">
+                <div class="products-single fix">
+                    <div class="box-img-hover">
+                        <img src="images/post6.jpg" class="img-fluid" alt="Image">
+                        <div class="mask-icon">
+                            <ul>
+                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i
+                                            class="cart"></i>11 juli 2025</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 special-grid foto">
+                <div class="products-single fix">
+                    <div class="box-img-hover">
+                        <img src="images/post7.png" class="img-fluid" alt="Image">
+                        <div class="mask-icon">
+                            <ul>
+                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i
+                                            class="cart"></i>11 juli 2025</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 special-grid foto">
+                <div class="products-single fix">
+                    <div class="box-img-hover">
+                        <img src="images/post5.jpg" class="img-fluid" alt="Image">
+                        <div class="mask-icon">
+                            <ul>
+                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i
+                                            class="cart"></i>11 juli 2025</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 special-grid vidio">
+                <div class="products-single fix">
+                    <div class="box-img-hover">
+                        <img src="images/post1.jpg" class="img-fluid" alt="Image">
+                        <div class="mask-icon">
+                            <ul>
+                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i
+                                            class="cart"></i>11 juli 2025</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- End Gallery  -->
+
+        <!-- Start Footer  -->
+        <footer>
+            <div class="footer-main">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-12 col-sm-12">
+                            <div class="footer-top-box">
+                                <h3>Business Time</h3>
+                                <ul class="list-time">
+                                    <li>Senin - Kamis: 08.00 Wib - 16.00 Wib</li>
+                                    <li>Jum'at: 16.30 Wib</li>
+                                    <li>Saturday - Sunday: <span>Closed</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 col-sm-12">
+                            <div class="footer-top-box">
+                                <h3>Newsletter</h3>
+                                <form class="newsletter-box">
+                                    <div class="form-group">
+                                        <input class="" type="email" name="Email" placeholder="Email Address*" />
+                                        <i class="fa fa-envelope"></i>
+                                    </div>
+                                    <button class="btn hvr-hover" type="submit">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 col-sm-12">
+                            <div class="footer-top-box">
+                                <h3>Social Media</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                <ul>
+                                    <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-google-plus" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-12 col-sm-12">
+                            <div class="footer-widget">
+                                <h4>About Website BAPPEDA kota Dumai</h4>
+                                <p> Website Bappeda Kota Dumai disajikan sebagai upaya untuk mendistribusikan informasi
+                                    yang dapat dimanfaatkan oleh para pelaku pembangunan dan mitra pembangunan potensial
+                                    serta bagi seluruh masyarakat Dumai khususnya, serta bagi masyarakat Indonesia
+                                    umumnya.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 col-sm-12">
+                            <div class="footer-link">
+                                <h4>Information</h4>
+                                <ul>
+                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="#">Customer Service</a></li>
+                                    <li><a href="#">Our Sitemap</a></li>
+                                    <li><a href="#">Terms &amp; Conditions</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 col-sm-12">
+                            <div class="footer-link-contact">
+                                <h4>Contact Us</h4>
+                                <ul>
+                                    <li>
+                                        <p><i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756
+                                            <br>Preston Street Wichita,<br> KS 67213
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888
+                                                705 770</a></p>
+                                    </li>
+                                    <li>
+                                        <p><i class="fas fa-envelope"></i>Email: <a
+                                                href="mailto:contactinfo@gmail.com">contactinfo@gmail.com</a></p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer  -->
+
+        <!-- Start copyright  -->
+        <div class="footer-copyright">
+            <p class="footer-company">All Rights Reserved. &copy; 2018 <a href="#">ThewayShop</a> Design By :
+                <a href="https://html.design/">html design</a>
+            </p>
+        </div>
+        <!-- End copyright  -->
+        <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+        <!-- ALL JS FILES -->
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <!-- ALL PLUGINS -->
+        <script src="js/jquery.superslides.min.js"></script>
+        <script src="js/bootstrap-select.js"></script>
+        <script src="js/inewsticker.js"></script>
+        <script src="js/bootsnav.js"></script>
+        <script src="js/images-loded.min.js"></script>
+        <script src="js/isotope.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/baguetteBox.min.js"></script>
+        <script src="js/form-validator.min.js"></script>
+        <script src="js/contact-form-script.js"></script>
+        <script src="js/custom.js"></script>
+        </body>
+
+        </html>
